@@ -16,24 +16,33 @@ export default class ChatInput extends React.PureComponent {
 
   onChange (event) {
     console.log(event.target.value)
+    const { name, value } = event.target
+    const state = {}
+    state[name] = value
+    this.setState(state)
+  }
+
+  send (event) {
+    event.preventDefault()
+    const { send } = this.props
+    const { user, msg } = this.state
+    send(user, msg)
+    this.setState({user: '', msg: ''})
   }
 
   render () {
-    console.log(this.props.send)
     const { user, msg } = this.state
     return (
       <form>
         <div className='field has-addons'>
           <p className='control'>
-            <InputSize className='input' type='text' placeholder='User' name='user' size='10' onChange={(event) => this.onChange(event)} />
+            <InputSize className='input' type='text' placeholder='User' name='user' size='10' value={user} onChange={(event) => this.onChange(event)} />
           </p>
           <p className='control'>
-            <InputSize className='input' type='text' placeholder='Message' name='msg' size='60' />
+            <InputSize className='input' type='text' placeholder='Message' name='msg' size='60' value={msg} onChange={(event) => this.onChange(event)} />
           </p>
           <p className='control'>
-            <a className='button is-success'>
-                Send
-            </a>
+            <button className='button is-success' onClick={(event) => this.send(event)} >Send</button>
           </p>
         </div>
       </form>
