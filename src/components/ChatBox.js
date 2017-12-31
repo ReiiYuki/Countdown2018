@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const ChatBox = styled.section`
     overflow: scroll;
     height: 50vh;
+    margin: 10px;
 `
 
 export default () => (
