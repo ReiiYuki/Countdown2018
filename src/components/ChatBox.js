@@ -20,6 +20,8 @@ export default class ChatBox extends React.PureComponent {
     self.setState({
       msgs: data
     })
+    const box = document.getElementById('box')
+    box.scrollTo(0, box.scrollHeight)
   }
 
   componentDidMount () {
@@ -29,7 +31,7 @@ export default class ChatBox extends React.PureComponent {
   render () {
     const { msgs } = this.state
     return (
-      <ChatContainer className='hero is-medium is-primary'>
+      <ChatContainer className='hero is-medium is-primary' id='box'>
         <div className='hero-head'>
           {msgs.map((msgItem) => <MsgItem key={msgItem.msg} user={msgItem.user} msg={msgItem.msg} />)}
         </div>
