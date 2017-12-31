@@ -28,6 +28,11 @@ export default class ChatBox extends React.PureComponent {
     this.props.get(this, this.setData)
   }
 
+  componentDidUpdate () {
+    const box = document.getElementById('box')
+    box.scrollTo(0, box.scrollHeight)
+  }
+
   render () {
     const { msgs } = this.state
     return (

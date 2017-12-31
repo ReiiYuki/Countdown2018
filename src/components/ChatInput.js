@@ -27,7 +27,7 @@ export default class ChatInput extends React.PureComponent {
     const { send } = this.props
     const { user, msg } = this.state
     send(user, msg)
-    this.setState({user: '', msg: ''})
+    this.setState({msg: ''})
   }
 
   render () {
