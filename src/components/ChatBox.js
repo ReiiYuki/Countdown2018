@@ -16,13 +16,14 @@ export default class ChatBox extends React.PureComponent {
     }
   }
 
-  componentDidMount () {
-    const self = this
-    this.props.get().then(data => {
-      self.setState({
-        msgs: data
-      })
+  setData (self, data) {
+    self.setState({
+      msgs: data
     })
+  }
+
+  componentDidMount () {
+    this.props.get(this, this.setData)
   }
 
   render () {
@@ -30,7 +31,7 @@ export default class ChatBox extends React.PureComponent {
     return (
       <ChatContainer className='hero is-medium is-primary'>
         <div className='hero-head'>
-          {msgs.map((msgItem) => <MsgItem user={msgItem.user} msg={msgItem.msg} />)}
+          {msgs.map((msgItem) => <MsgItem key={msgItem.msg} user={msgItem.user} msg={msgItem.msg} />)}
         </div>
       </ChatContainer>
     )

@@ -10,15 +10,11 @@ export default {
     db.ref('chat').push().set({ user, msg })
   },
 
-  getMsg: () => new Promise(
-    (resolve, reject) => (
-      db.ref('chat').on('value', (snapshot) => {
-        const data = []
-        snapshot.forEach((childSnapshot) => {
-          data.push(childSnapshot.val())
-        })
-        resolve(data)
-      })
-    )
-  ).then((data) => data)
+  getMsg: (self, cb) => db.ref('chat').on('value', (snapshot) => {
+    const data = []
+    snapshot.forEach((childSnapshot) => {
+      data.push(childSnapshot.val())
+    })
+    cb(self, data)
+  })
 }
