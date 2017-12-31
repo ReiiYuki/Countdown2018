@@ -5,6 +5,6 @@ import React from 'react'
 export default (props) => (
   <div>
     <CountdownHeader />
-    <ChatBody />
+    <ChatBody {...props} />
   </div>
 )

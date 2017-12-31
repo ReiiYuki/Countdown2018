@@ -6,12 +6,26 @@ const InputSize = styled.input`
 `
 
 export default class ChatInput extends React.PureComponent {
+  constructor (props) {
+    super(props)
+    this.state = {
+      user: '',
+      msg: ''
+    }
+  }
+
+  onChange (event) {
+    console.log(event.target.value)
+  }
+
   render () {
+    console.log(this.props.send)
+    const { user, msg } = this.state
     return (
       <form>
         <div className='field has-addons'>
           <p className='control'>
-            <InputSize className='input' type='text' placeholder='User' name='user' size='10' />
+            <InputSize className='input' type='text' placeholder='User' name='user' size='10' onChange={(event) => this.onChange(event)} />
           </p>
           <p className='control'>
             <InputSize className='input' type='text' placeholder='Message' name='msg' size='60' />
