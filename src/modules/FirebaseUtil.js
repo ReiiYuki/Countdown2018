@@ -13,8 +13,12 @@ export default {
   getMsg: () => new Promise(
     (resolve, reject) => (
       db.ref('chat').on('value', (snapshot) => {
-        resolve(snapshot.val())
+        const data = []
+        snapshot.forEach((childSnapshot) => {
+          data.push(childSnapshot.val())
+        })
+        resolve(data)
       })
     )
-  ).then((data) => data)
+  ).then((data) => console.log(data))
 }
