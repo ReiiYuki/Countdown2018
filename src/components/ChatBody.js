@@ -5,7 +5,7 @@ import React from 'react'
 export default (props) => (
   <section className='section'>
     <div className='container'>
-      <ChatBox />
+      <ChatBox get={props.fire.getMsg} />
       <ChatInput send={props.fire.sendMsg} />
     </div>
   </section>

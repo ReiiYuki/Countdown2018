@@ -8,43 +8,10 @@ const ChatBox = styled.section`
     margin: 10px;
 `
 
-export default () => (
+export default (props) => (
   <ChatBox className='hero is-medium is-primary'>
     <div className='hero-head'>
-      <MsgItem color='#FF55' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
-      <MsgItem color='#DDDD' user='AAA' msg='fdffffffffffffffffffffffffffffffffffffffffffffffffffffffff' />
+      {props.get().map((msgItem) => <MsgItem user={msgItem.user} msg={msgItem.msg} />)}
     </div>
   </ChatBox>
 )

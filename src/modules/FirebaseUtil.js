@@ -20,5 +20,5 @@ export default {
         resolve(data)
       })
     )
-  ).then((data) => console.log(data))
+  ).then((data) => data)
 }
