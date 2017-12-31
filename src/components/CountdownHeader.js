@@ -16,7 +16,7 @@ export default class extends React.Component {
   startTimer () {
     this.interval = setInterval(() => {
       this.forceUpdate()
-    }, 500)
+    }, 1000)
   }
 
   render () {
