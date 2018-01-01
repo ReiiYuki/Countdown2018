@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import styled from 'styled-components'
 
@@ -5,17 +7,22 @@ const InputSize = styled.input`
     width: ${props => props.size}vw;
 `
 
-export default class ChatInput extends React.PureComponent {
-  constructor (props) {
-    super(props)
-    this.state = {
-      user: '',
-      msg: ''
-    }
+type Props = {
+  send: (string, string) => void
+}
+
+type State = {
+  user: string,
+  msg: string
+}
+
+export default class ChatInput extends React.PureComponent<Props, State> {
+  state = {
+    user: '',
+    msg: ''
   }
 
   onChange (event) {
-    console.log(event.target.value)
     const { name, value } = event.target
     const state = {}
     state[name] = value

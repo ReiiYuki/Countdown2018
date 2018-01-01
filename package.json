@@ -16,17 +16,30 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "flow": "flow",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "babel-eslint": "7",
+    "eslint": "3.x",
     "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-config-standard-flow": "^1.0.1",
     "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.40.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-standard": "^3.0.1",
-    "standard": "^10.0.3"
+    "flow-bin": "^0.62.0",
+    "standard": "^10.0.3",
+    "standard-flow": "^1.0.0"
+  },
+  "standard": {
+    "plugins": [
+      "flowtype"
+    ],
+    "parser": "babel-eslint"
   }
 }

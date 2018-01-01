@@ -21,7 +21,7 @@ export default class extends React.Component {
 
   render () {
     let showText = `${this.getTimeLeft()} Left to 2018`
-    if (moment.duration(this.getTimeLeft()).asMilliseconds() <= 0) {
+    if (moment.duration(this.getTimeLeft()).asMilliseconds() <= 0 || moment().year() > 2017) {
       showText = 'Happy new year 2018!'
     }
     return (

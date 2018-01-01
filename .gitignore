@@ -21,3 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 Firebase.config.js
+
+/public
+
+yarn.lock
+package-lock.json
